@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #191919;
+  position: relative;
+}
+.carousel {
+  display: flex;
+  gap: 1.5em;
+  width: 100%;
+  margin: 0 3em;
+  overflow-x: scroll;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.card {
+  height: 18em;
+  width: 25em;
+  border-radius: 1em;
+
+  filter: grayscale(100%);
+  transform: scale(0.95);
+  transition: transform 0.75s ease, filter 0.5s ease;
+}
+.card:hover {
+  filter: grayscale(0);
+  transform: scale(0.97);
+}
+.left,
+.right {
+  position: absolute;
+  border: 0;
+  padding: 0.1em;
+  height: 3.75em;
+  width: 3.75em;
+  border-radius: 50%;
+
+  background: red;
+  font-size: 1em;
+  font-weight: 600;
+  top: 75%;
+  stroke: #fff;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
+}
+.left {
+  left: 40%;
+}
+.right {
+  right: 40%;
+}
+.left:hover,
+.right:hover {
+  opacity: 0.5;
+}
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.indicators {
+  position: absolute;
+  top: 78.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 0.5em;
+  z-index: 10;
+}
+
+.indicators span {
+  width: 20px;
+  height: 20px;
+  background-color: #555;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicators span.active {
+  background-color: red;
+}
